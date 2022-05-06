@@ -35,14 +35,6 @@ public class ToDoServiceImpl implements ToDoService{
         toDoRepository.delete(toDo);
     }
 
-    /*@Override
-    public ToDoDTO updateToDo(ToDoDTO toDoDTO) {
-        ToDho toDho = mapper.toToDo(toDoDTO);
-        if(toDho.getId() != null){
-            mapper.toToDoDTO((toDoRepository.save(toDho)));
-        }
-        throw new RuntimeException("Id not found");
-    }*/
 
     @Override
     public ToDoDTO getToDoId(Long id) {

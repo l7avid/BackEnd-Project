@@ -9,7 +9,7 @@ import java.util.List;
 @Mapper(componentModel = "spring", uses = {ToDoMapper.class})
 public interface CategoryMapper {
     @Mappings({
-            @Mapping(source = "id", target = "id"),
+            @Mapping(source = "id", target = "categoryId"),
             @Mapping(source = "categoryName", target = "categoryName"),
             @Mapping(source = "toDos", target = "toDos")
     })
