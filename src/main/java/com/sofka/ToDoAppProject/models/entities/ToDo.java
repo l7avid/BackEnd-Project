@@ -1,4 +1,4 @@
-package models.entities;
+package com.sofka.ToDoAppProject.models.entities;
 
 import lombok.Data;
 

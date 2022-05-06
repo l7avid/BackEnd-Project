@@ -1,7 +1,7 @@
-package models.mapper;
+package com.sofka.ToDoAppProject.models.mapper;
 
-import models.dto.CategoryDTO;
-import models.entities.Category;
+import com.sofka.ToDoAppProject.models.dto.CategoryDTO;
+import com.sofka.ToDoAppProject.models.entities.Category;
 import org.mapstruct.*;
 import java.util.List;
 
@@ -9,9 +9,9 @@ import java.util.List;
 @Mapper(componentModel = "spring", uses = {ToDoMapper.class})
 public interface CategoryMapper {
     @Mappings({
-            @Mapping(source = "categoryId", target = "categoryId"),
+            @Mapping(source = "id", target = "id"),
             @Mapping(source = "categoryName", target = "categoryName"),
-            @Mapping(source = "todos", target = "todos")
+            @Mapping(source = "toDos", target = "toDos")
     })
 
     //DestinationType instanceName(OriginType instanceName)

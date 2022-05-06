@@ -1,7 +1,7 @@
-package models.mapper;
+package com.sofka.ToDoAppProject.models.mapper;
 
-import models.dto.ToDoDTO;
-import models.entities.ToDo;
+import com.sofka.ToDoAppProject.models.dto.ToDoDTO;
+import com.sofka.ToDoAppProject.models.entities.ToDo;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -17,9 +17,8 @@ public interface ToDoMapper {
             @Mapping(source = "done", target = "done"),
             @Mapping(source = "categoryId", target = "categoryId")
     })
-
     ToDoDTO toToDoDTO(ToDo toDo);
-    List<ToDoDTO> toToDoDTOs(ToDo todos);
+    List<ToDoDTO> toToDoDTOs(List<ToDo> todos);
 
     @InheritInverseConfiguration
     ToDo toToDo(ToDoDTO toDoDTO);

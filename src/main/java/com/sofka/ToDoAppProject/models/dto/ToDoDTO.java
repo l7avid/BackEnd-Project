@@ -1,4 +1,4 @@
-package models.dto;
+package com.sofka.ToDoAppProject.models.dto;
 
 public class ToDoDTO {
 
