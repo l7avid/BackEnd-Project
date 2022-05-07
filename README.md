@@ -7,8 +7,9 @@ This is the backend part of the ToDo List App developed on Java:
 1. Open a new terminal in the folder you want store the project
 2. Run the next command: git clone https://github.com/l7avid/BackEnd-Project.git
 3. Open the project using your IDE (I suggest you to use IntelliJ Idea)
-4. Go to ToDoAppProjectApplication Java Class and click the run button
-5. Now your Backend Server is up and running
+4. Go to resources/application.properties and set you username and password (mySQL worbench credentials)
+5. Go to ToDoAppProjectApplication Java Class and click the run button
+6. Now your Backend Server is up and running
 
 ### Using Postman to make requests to your backend:
 I suggest you to use Postman API in order to make requests to prove the project backend is working properly
