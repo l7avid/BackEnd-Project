@@ -2,7 +2,6 @@ package com.sofka.ToDoAppProject.controller;
 
 import com.sofka.ToDoAppProject.models.dto.CategoryDTO;
 import com.sofka.ToDoAppProject.models.dto.ToDoDTO;
-import com.sofka.ToDoAppProject.models.entities.ToDo;
 import com.sofka.ToDoAppProject.services.category.CategoryService;
 import com.sofka.ToDoAppProject.services.todo.ToDoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/")
+@RequestMapping("api/todo")
+@CrossOrigin(origins = "http://localhost:3000/")
 public class ToDoController {
 
     @Autowired
@@ -20,18 +20,18 @@ public class ToDoController {
     @Autowired
     private CategoryService categoryService;
 
-    @GetMapping("get/todo")
+    @GetMapping
     public List<ToDoDTO> getAllToDos(){
         return service.getToDoDTOs();
     }
 
-    @PostMapping("save/todo")
+    @PostMapping
     public List<CategoryDTO> saveToDo(@RequestBody ToDoDTO toDoDTO){
         service.saveToDoDTO(toDoDTO);
         return categoryService.getCategoriesDTO();
     }
 
-    @PutMapping("update/todo")
+    @PutMapping
     public List<CategoryDTO> updateToDo(@RequestBody ToDoDTO toDoDTO){
         if(toDoDTO.getId() != null){
             service.saveToDoDTO(toDoDTO);
@@ -41,7 +41,7 @@ public class ToDoController {
         return categoryService.getCategoriesDTO();
     }
 
-    @DeleteMapping("delete/todo/{id}")
+    @DeleteMapping("/{id}")
     public void deleteToDo(@PathVariable Long id){
         service.deleteToDo(id);
     }
