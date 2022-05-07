@@ -14,7 +14,7 @@ public class Category {
 
     private String categoryName;
 
-    @OneToMany(mappedBy = "categoryId")
+    @OneToMany(mappedBy = "categoryId", orphanRemoval = true)
     private List<ToDo> toDos = new ArrayList<>();
 
     public Category addToDo(ToDo toDo){
